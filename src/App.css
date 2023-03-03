@@ -16,17 +16,22 @@
   display: flex;
   gap: 20px;
 }
-.enter button, select{
+.enter button{
   background: #F2D080;
   border-radius: 8px;
-  padding: 12px 18px;
+  outline: none;
+  padding: 16px 18px;
   font-family: 'Inter';
+  cursor: pointer;
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;
   color: #07070B;
-  
+  font-size: 20px;  
+  position: relative;
+  bottom: 2px;
 }
+
 .center h1{
   font-family: 'Gilroy';
   font-style: normal;
@@ -322,6 +327,9 @@ padding-bottom: 40px;
     flex-wrap: wrap;
     width: 280px;
     margin: auto;
+  }
+  .box1{
+    margin-bottom: 20px;
   }
   .phone2 h1, .phone3 h1{
     margin-top: 100px;

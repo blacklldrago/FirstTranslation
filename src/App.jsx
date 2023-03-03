@@ -1,5 +1,9 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import './App.css';
+// animatio
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+// animatio
 //components
 import { Card, Card1, Card2, Card3, Card4 } from './component/card';
 //components
@@ -50,6 +54,9 @@ import medium from './img/medium.png';
 import facebook from './img/facebook.png';
 import twitter from './img/twitter.png';
 import youtube from './img/youtube.png';
+
+
+import { MenuItem, Select } from "@mui/material";
 //img
 
 
@@ -67,9 +74,12 @@ function App() {
     changeLanguage(value)
     setLng(value)
   }
+  useEffect(() => {
+    AOS.init();
+  }, [])
 
   return(<div>
-    <div className="container1">
+    <div className="container1" data-aos="fade-up" data-aos-duration="1500">
       <div className="container">
         <div className="navbar">
           <div className="start">
@@ -77,11 +87,11 @@ function App() {
           </div>
           <div className="end">
             <div className="lang">
-            <select  onChange={handleChange}>
-              <option value="ru">Ru</option>
-              <option value="en">Eng</option>
-              <option value="tj">Tjk</option>
-            </select>
+              <Select onChange={handleChange}   sx={{ height:50, minWidth: 100, background:"#F2D080"}}> 
+                <MenuItem value = {"ru"}>Ru</MenuItem>
+                <MenuItem value = {"en"}>En</MenuItem>
+                <MenuItem value = {"tj"}>Tjk</MenuItem> 
+              </Select>
             </div>
             <div className="enter">
               <button>{t('text3')}</button>
@@ -101,7 +111,7 @@ function App() {
         </div>
       </div>
     </div>
-    <div className="container2">
+    <div className="container2" data-aos="fade-down" data-aos-duration="1500">
       <div className="container">
         <div className="line">
           <div className="five">
@@ -123,13 +133,13 @@ function App() {
         </div>
       </div>
     </div>
-    <div className="container3">
+    <div className="container3" data-aos="zoom-in" data-aos-duration="1500">
       <div className="container">
         <h1 className='big'>{t("text10")}</h1>
         <p className='good'>{t("text11")}</p>
         <div className="valute">
         <>
-        <Swiper
+        <Swiper data-aos="flip-up" data-aos-duration="1500"
         slidesPerView={1}
         spaceBetween={10}
         navigation={{
@@ -192,19 +202,19 @@ function App() {
     <div className="container4">
         <div className="container">
           <h1 className='why'>{t("text12")}</h1>
-          <div className="box1">
+          <div className="box1" data-aos="flip-up" data-aos-duration="1500">
             <Card1 imgUrl={support} text1 = {t("text13")} />
             <Card1 imgUrl={tether} text1 = {t("text13")} />
             <Card1 imgUrl={security} text1 = {t("text13")} />
           </div>
-          <div className="box2">
+          <div className="box2" data-aos="flip-down" data-aos-duration="1500">
             <Card1 imgUrl={demo} text1 = {t("text13")} />
             <Card1 imgUrl={refferal} text1 = {t("text13")} />
             <Card1 imgUrl={demo} text1 = {t("text13")} />
           </div>
         </div>
     </div>
-    <div className="container5">
+    <div className="container5"  data-aos="zoom-in" data-aos-duration="1500">
       <div className="container">
         <h1 className='important'>{t("text14")}</h1>
         <h1 className='make'>{t("text15")}</h1>
@@ -232,7 +242,7 @@ function App() {
           <h1 className='feedback'>{t("text19")}</h1>
           <div className="feeds">
           <>
-        <Swiper
+        <Swiper data-aos="flip-left" data-aos-duration="1500"
         slidesPerView={1}
         spaceBetween={10}
         navigation={{
@@ -287,7 +297,7 @@ function App() {
     <div className="container7">
       <div className="container">
         <h1 className='easy'>{t("text30")}</h1>
-        <div className="line1">
+        <div className="line1" data-aos="fade-down" data-aos-duration="1500">
           <Card3 imgUrl={person} text1 = {t("text32")}/>
           <Card3 imgUrl={wallet} text1 = {t("text33")}/>
           <Card3 imgUrl={bag} text1 = {t("text34")}/>
@@ -297,7 +307,7 @@ function App() {
         </div>
       </div>
     </div>
-    <div className="container8">
+    <div className="container8"   data-aos="zoom-in" data-aos-duration="1500">
       <div className="container">
         <div className="last-box">
             <Card4 imgUrl={linkedin} text1 = "LinkedIn"/>
